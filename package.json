@@ -7,7 +7,7 @@
     "dev": "nodemon index.js",
     "db:reset": "sequelize-cli db:drop && sequelize-cli db:create && sequelize-cli db:migrate && sequelize-cli db:seed:all",
     "db:setup": "NODE_ENV=production npx sequelize db:create && NODE_ENV=production npx sequelize db:migrate && NODE_ENV=production npx sequelize db:seed:all",
-    "start": "NODE_ENV=production node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",

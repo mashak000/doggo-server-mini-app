@@ -1,9 +1,7 @@
 const { Router } = require('express');
-const TelegramBot = require('node-telegram-bot-api');
 const db = require('./db');
+const bot = require('../bot');
 
-const token = process.env.TOKEN;
-const bot = new TelegramBot(token, { polling: true });
 const usersRef = db.ref('Users');
 
 const router = Router();
