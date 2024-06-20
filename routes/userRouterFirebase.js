@@ -16,14 +16,14 @@ router.route('/signup').post(async (req, res) => {
 
   try {
     if (!(first_name && tg_id)) {
-      await bot.answerWebQuery(queryId, {
-        type: 'article',
-        id: queryId,
-        title: 'Ответ с сервера',
-        input_message_content: {
-          message_text: 'Все поля должны быть заполнены',
-        },
-      });
+      // await bot.answerWebQuery(queryId, {
+      //   type: 'article',
+      //   id: queryId,
+      //   title: 'Ответ с сервера',
+      //   input_message_content: {
+      //     message_text: 'Все поля должны быть заполнены',
+      //   },
+      // });
       return res.status(400).json({ message: 'All fields are required' });
     }
 
@@ -37,27 +37,27 @@ router.route('/signup').post(async (req, res) => {
     if (!user.val()) {
       newUser = await usersRef.push({ first_name, tg_id });
     } else {
-      await bot.answerWebQuery(queryId, {
-        type: 'article',
-        id: queryId,
-        title: 'Ответ с сервера',
-        input_message_content: {
-          message_text: 'Пользователь с таким tg_id уже существует',
-        },
-      });
+      // await bot.answerWebQuery(queryId, {
+      //   type: 'article',
+      //   id: queryId,
+      //   title: 'Ответ с сервера',
+      //   input_message_content: {
+      //     message_text: 'Пользователь с таким tg_id уже существует',
+      //   },
+      // });
       return res.status(403).json({ message: 'User already exists' });
     }
 
     return res.json({ user: newUser });
   } catch (error) {
-    await bot.answerWebQuery(queryId, {
-      type: 'article',
-      id: queryId,
-      title: 'Ответ с сервера',
-      input_message_content: {
-        message_text: 'Ошибка',
-      },
-    });
+    // await bot.answerWebQuery(queryId, {
+    //   type: 'article',
+    //   id: queryId,
+    //   title: 'Ответ с сервера',
+    //   input_message_content: {
+    //     message_text: 'Ошибка',
+    //   },
+    // });
     return res.status(500).json({});
   }
 });

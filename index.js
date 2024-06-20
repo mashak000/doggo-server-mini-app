@@ -17,7 +17,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use('/api/userRouterFirebase', userRouterFirebase);
+app.use('/api/usersFirebase', userRouterFirebase);
 app.use('/api/users', userRouter);
 app.use('/api/web-data', dataRouter);
 
