@@ -1,12 +1,16 @@
 const { Router } = require('express');
 const TelegramBot = require('node-telegram-bot-api');
+const db = require('./db');
 
 const token = process.env.TOKEN;
 const bot = new TelegramBot(token, { polling: true });
+const usersRef = db.ref('Users');
 
 const router = Router();
 
-router.get('/', async (req, res) => res.status(200).json({ message: 'server is working' }));
+router.get('/', async (req, res) => {
+  usersRef.once('value', (snapshot) => res.json(snapshot.val()));
+});
 
 router.post('/', async (req, res) => {
   const { queryId } = req.body;
