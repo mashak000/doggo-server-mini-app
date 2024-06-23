@@ -49,6 +49,6 @@ app.use('/api/usersFirebase', userRouterFirebase);
 //   }
 // });
 
-const PORT = 8000;
+const { PORT } = process.env;
 
 app.listen(PORT, () => console.log(` Server started on port ${PORT}`));
