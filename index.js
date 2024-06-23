@@ -3,10 +3,10 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
-const bot = require('./bot');
+// const bot = require('./bot');
 
-const userRouter = require('./routes/userRouter');
-const dataRouter = require('./routes/dataRouter');
+// const userRouter = require('./routes/userRouter');
+// const dataRouter = require('./routes/dataRouter');
 const userRouterFirebase = require('./routes/userRouterFirebase');
 const authMiddleware = require('./middleware/authMiddleware');
 const showInitDataMiddleware = require('./middleware/showInitDataMiddleware');
@@ -24,30 +24,30 @@ app.use(authMiddleware);
 app.get('/', showInitDataMiddleware);
 app.use(defaultErrorMiddleware);
 app.use('/api/usersFirebase', userRouterFirebase);
-app.use('/api/users', userRouter);
-app.use('/api/web-data', dataRouter);
+// app.use('/api/users', userRouter);
+// app.use('/api/web-data', dataRouter);
 
-const url = 'https://delightful-monstera-119621.netlify.app';
+// const url = 'https://delightful-monstera-119621.netlify.app';
 
-bot.on('message', async (msg) => {
-  const chatId = msg.chat.id;
-  const { text } = msg;
-  console.log(text);
+// bot.on('message', async (msg) => {
+//   const chatId = msg.chat.id;
+//   const { text } = msg;
+//   console.log(text);
 
-  if (text === '/start') {
-    await bot.sendMessage(chatId, 'Ниже появится кнопка, заполни форму', {
-      reply_markup: {
-        keyboard: [[{ text: 'заполни форму' }]],
-      },
-    });
+//   if (text === '/start') {
+//     await bot.sendMessage(chatId, 'Ниже появится кнопка, заполни форму', {
+//       reply_markup: {
+//         keyboard: [[{ text: 'заполни форму' }]],
+//       },
+//     });
 
-    await bot.sendMessage(chatId, 'Заходи в наш интернет магазин', {
-      reply_markup: {
-        inline_keyboard: [[{ text: 'Сделать заказ', web_app: { url } }]],
-      },
-    });
-  }
-});
+//     await bot.sendMessage(chatId, 'Заходи в наш интернет магазин', {
+//       reply_markup: {
+//         inline_keyboard: [[{ text: 'Сделать заказ', web_app: { url } }]],
+//       },
+//     });
+//   }
+// });
 
 const PORT = 8000;
 

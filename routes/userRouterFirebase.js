@@ -4,7 +4,7 @@ const { Router } = require('express');
 require('dotenv').config();
 
 const db = require('./db');
-const bot = require('../bot');
+// const bot = require('../bot');
 
 const router = Router();
 
