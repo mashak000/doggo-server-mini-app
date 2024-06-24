@@ -10,7 +10,6 @@ const userRouter = require('./routes/userRouter');
 // const userRouterFirebase = require('./routes/userRouterFirebase');
 const authMiddleware = require('./middleware/authMiddleware');
 const showInitDataMiddleware = require('./middleware/showInitDataMiddleware');
-const defaultErrorMiddleware = require('./middleware/defaultErrorMiddleware');
 
 const app = express();
 
@@ -22,7 +21,6 @@ app.use(cookieParser());
 
 app.use(authMiddleware);
 app.get('/', showInitDataMiddleware);
-app.use(defaultErrorMiddleware);
 // app.use('/api/usersFirebase', userRouterFirebase);
 app.use('/api/users', userRouter);
 // app.use('/api/web-data', dataRouter);
