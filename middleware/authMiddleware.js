@@ -4,10 +4,12 @@ require('dotenv').config();
 const token = process.env.TOKEN;
 
 function setInitData(res, initData) {
+  console.log('initData: ', initData);
   res.locals.initData = initData;
 }
 
 const authMiddleware = (req, res, next) => {
+  console.log('authorization: ', req.header('authorization'));
   const [authType, authData = ''] = (req.header('authorization') || '').split(
     ' ',
   );
