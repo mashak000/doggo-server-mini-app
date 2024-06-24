@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 // const bot = require('./bot');
 
-// const userRouter = require('./routes/userRouter');
+const userRouter = require('./routes/userRouter');
 // const dataRouter = require('./routes/dataRouter');
 // const userRouterFirebase = require('./routes/userRouterFirebase');
 const authMiddleware = require('./middleware/authMiddleware');
@@ -24,7 +24,7 @@ app.use(authMiddleware);
 app.get('/', showInitDataMiddleware);
 app.use(defaultErrorMiddleware);
 // app.use('/api/usersFirebase', userRouterFirebase);
-// app.use('/api/users', userRouter);
+app.use('/api/users', userRouter);
 // app.use('/api/web-data', dataRouter);
 
 // const url = 'https://delightful-monstera-119621.netlify.app';
