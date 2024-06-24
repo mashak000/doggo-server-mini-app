@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 
 const userRouter = require('./routes/usersRouter');
-const dogRouter = require('./routes/dogRouter');
+const dogsRouter = require('./routes/dogsRouter');
 const authMiddleware = require('./middleware/authMiddleware');
 // const showInitDataMiddleware = require('./middleware/showInitDataMiddleware');
 
@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use(authMiddleware);
 // app.get('/', showInitDataMiddleware);
 app.use('/api/users', userRouter);
-app.use('/api/dogs', dogRouter);
+app.use('/api/dogs', dogsRouter);
 
 const { PORT } = process.env;
 
