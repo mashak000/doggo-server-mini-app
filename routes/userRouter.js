@@ -5,7 +5,7 @@ const { User } = require('../db/models');
 const router = Router();
 
 router.get('/', async (req, res) => {
-  const data = User.findAll();
+  const data = await User.findAll();
   return res.json(data);
 });
 
@@ -14,15 +14,32 @@ router.route('/signup').post(async (req, res) => {
     const { user } = res.locals.initData;
     console.log('user: ', user);
 
-    const [newUser] = User.findOrCreate({
+    const [newUser, created] = await User.findOrCreate({
       where: { tgId: user.id },
       defaults: user,
     });
 
-    // if (!created) {
-    //   return res.status(403).json({ message: 'User already exists' });
-    // }
-    return res.status(200).json(newUser);
+    if (!created) {
+      return res.json({ message: 'User already exists', newUser });
+    }
+    return res.json({ message: 'User created', newUser });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: 'Error' });
+  }
+});
+
+router.route('/login').post(async (req, res) => {
+  try {
+    const { user } = res.locals.initData;
+    console.log('user: ', user);
+
+    const foundUser = await User.find({ where: { tgId: user.id } });
+
+    if (!foundUser) {
+      return res.status(403).json({ message: 'User does not exist' });
+    }
+    return res.json({ message: 'User Logged In', foundUser });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: 'Error' });

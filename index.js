@@ -3,11 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
-// const bot = require('./bot');
 
 const userRouter = require('./routes/userRouter');
-// const dataRouter = require('./routes/dataRouter');
-// const userRouterFirebase = require('./routes/userRouterFirebase');
 const authMiddleware = require('./middleware/authMiddleware');
 const showInitDataMiddleware = require('./middleware/showInitDataMiddleware');
 
@@ -21,31 +18,8 @@ app.use(cookieParser());
 
 app.use(authMiddleware);
 app.get('/', showInitDataMiddleware);
-// app.use('/api/usersFirebase', userRouterFirebase);
 app.use('/api/users', userRouter);
-// app.use('/api/web-data', dataRouter);
-
-// const url = 'https://delightful-monstera-119621.netlify.app';
-
-// bot.on('message', async (msg) => {
-//   const chatId = msg.chat.id;
-//   const { text } = msg;
-//   console.log(text);
-
-//   if (text === '/start') {
-//     await bot.sendMessage(chatId, 'Ниже появится кнопка, заполни форму', {
-//       reply_markup: {
-//         keyboard: [[{ text: 'заполни форму' }]],
-//       },
-//     });
-
-//     await bot.sendMessage(chatId, 'Заходи в наш интернет магазин', {
-//       reply_markup: {
-//         inline_keyboard: [[{ text: 'Сделать заказ', web_app: { url } }]],
-//       },
-//     });
-//   }
-// });
+app.use('/api/dogs', userRouter);
 
 const { PORT } = process.env;
 
