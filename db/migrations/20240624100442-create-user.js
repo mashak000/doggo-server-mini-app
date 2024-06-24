@@ -13,9 +13,11 @@ module.exports = {
       },
       firstName: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       lastName: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       username: {
         type: Sequelize.STRING,
@@ -26,10 +28,12 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: new Date(),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: new Date(),
       },
     });
   },
