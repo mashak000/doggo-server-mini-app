@@ -34,7 +34,7 @@ router.route('/login').post(async (req, res) => {
     const { user } = res.locals.initData;
     console.log('user: ', user);
 
-    const foundUser = await User.find({ where: { tgId: user.id } });
+    const foundUser = await User.findOne({ where: { tgId: user.id } });
 
     if (!foundUser) {
       return res.status(403).json({ message: 'User does not exist' });
