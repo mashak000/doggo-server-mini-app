@@ -2,18 +2,39 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('Dogs', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      first_name: {
+      name: {
         type: Sequelize.STRING
       },
-      tg_id: {
+      breed: {
         type: Sequelize.STRING
+      },
+      age: {
+        type: Sequelize.INTEGER
+      },
+      health: {
+        type: Sequelize.TEXT
+      },
+      charachter: {
+        type: Sequelize.TEXT
+      },
+      vaccinated: {
+        type: Sequelize.BOOLEAN
+      },
+      parasites: {
+        type: Sequelize.BOOLEAN
+      },
+      sterilized: {
+        type: Sequelize.BOOLEAN
+      },
+      userId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -26,6 +47,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('Dogs');
   }
 };
