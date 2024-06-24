@@ -4,9 +4,10 @@ const cors = require('cors');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 
-const userRouter = require('./routes/userRouter');
+const userRouter = require('./routes/usersRouter');
+const dogRouter = require('./routes/dogRouter');
 const authMiddleware = require('./middleware/authMiddleware');
-const showInitDataMiddleware = require('./middleware/showInitDataMiddleware');
+// const showInitDataMiddleware = require('./middleware/showInitDataMiddleware');
 
 const app = express();
 
@@ -17,9 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(authMiddleware);
-app.get('/', showInitDataMiddleware);
+// app.get('/', showInitDataMiddleware);
 app.use('/api/users', userRouter);
-app.use('/api/dogs', userRouter);
+app.use('/api/dogs', dogRouter);
 
 const { PORT } = process.env;
 
