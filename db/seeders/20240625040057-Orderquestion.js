@@ -10,6 +10,30 @@ module.exports = {
           theme: 'order',
           name: 'option',
         },
+        {
+          question: 'Select tariff',
+          placeholder: 'Senior sitter',
+          theme: 'order',
+          name: 'tariff',
+        },
+        {
+          question: 'Select date',
+          placeholder: '19.06.2024',
+          theme: 'order',
+          name: 'orderDate',
+        },
+        {
+          question: 'Select duration',
+          placeholder: '5 hours',
+          theme: 'order',
+          name: 'duration',
+        },
+        {
+          question: 'Your address',
+          placeholder: 'Tbilisi, Rustaveli street, 5',
+          theme: 'order',
+          name: 'address',
+        },
       ],
       {},
     );
