@@ -56,7 +56,7 @@ module.exports = {
           placeholder: 'Tbilisi, Rustaveli street, 5',
           theme: 'order',
           name: 'address',
-          type: 'input',
+          type: 'textarea',
         },
 
         {
