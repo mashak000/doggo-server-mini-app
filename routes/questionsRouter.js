@@ -1,13 +1,13 @@
 /* eslint-disable camelcase */
 const { Router } = require('express');
-const { Dogquestion, Question, Dog } = require('../db/models');
+const { Question, Dog } = require('../db/models');
 
 const router = Router();
 
 router
   .route('/dog')
   .get(async (req, res) => {
-    const data = await Dogquestion.findAll();
+    const data = await Question.findAll({ where: { theme: 'dog' } });
     return res.json(data);
   })
   .post(async (req, res) => {
@@ -33,7 +33,7 @@ router
   });
 
 router.route('/order').get(async (req, res) => {
-  const data = await Question.findAll();
+  const data = await Question.findAll({ where: { theme: 'order' } });
   return res.json(data);
 });
 // .post(async (req, res) => {
@@ -41,8 +41,8 @@ router.route('/order').get(async (req, res) => {
 //     const { body } = req;
 //     console.log('body: ', body);
 
-//     //   const newDogquestion = await Dogquestion.create(body);
-//     //   return res.status(200).json(newDogquestion);
+//     //   const newQuestion = await Question.create(body);
+//     //   return res.status(200).json(newQuestion);
 //   } catch (error) {
 //     console.log(error);
 //     return res.status(500).json({ message: 'Error' });
