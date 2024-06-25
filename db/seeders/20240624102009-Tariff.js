@@ -5,16 +5,17 @@ module.exports = {
       'Tariffs',
       [
         {
-          name: 'Sitting / boarding',
+          name: 'Walking',
           price: 500,
+          about: 'As much time as the dog needs.',
+        },
+        {
+          name: 'Sitting / boarding',
+          price: 1500,
           about:
             "The specialist can either sit in the pet owner's home or take the dog with them and follow the usual routine. Sitter",
         },
-        {
-          name: 'Walking',
-          price: 1500,
-          about: 'As much time as the dog needs.',
-        },
+
         {
           name: 'Social walk',
           price: 1500,
@@ -24,8 +25,12 @@ module.exports = {
         {
           name: 'Individual',
           price: 2000,
-          about:
-            'A walk where dogs and their owners learn to communicate properly with each other.',
+          about: 'Individual care of your dog.',
+        },
+        {
+          name: 'Respite',
+          price: 2000,
+          about: "Respite care at sitter's home",
         },
         {
           name: 'Back_to_nature',

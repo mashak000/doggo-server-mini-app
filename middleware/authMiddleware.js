@@ -16,6 +16,7 @@ const authMiddleware = (req, res, next) => {
   switch (authType) {
     case 'tma':
       try {
+        console.log(authData);
         validate(authData, token, { expiresIn: 3600 });
         setInitData(res, parse(authData));
         return next();

@@ -1,21 +1,23 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Dogquestion extends Model {
+  class Question extends Model {
     static associate(models) {}
   }
-  Dogquestion.init(
+  Question.init(
     {
       question: DataTypes.TEXT,
       placeholder: DataTypes.STRING,
       theme: DataTypes.STRING,
       name: DataTypes.STRING,
       type: DataTypes.STRING,
+      optionsValues: DataTypes.ARRAY(DataTypes.INTEGER),
+      optionsText: DataTypes.ARRAY(DataTypes.TEXT),
     },
     {
       sequelize,
-      modelName: 'Dogquestion',
+      modelName: 'Question',
     },
   );
-  return Dogquestion;
+  return Question;
 };

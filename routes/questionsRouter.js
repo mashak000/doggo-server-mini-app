@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 const { Router } = require('express');
-const { Dogquestion, Orderquestion, Dog } = require('../db/models');
+const { Dogquestion, Question, Dog } = require('../db/models');
 
 const router = Router();
 
@@ -33,7 +33,7 @@ router
   });
 
 router.route('/order').get(async (req, res) => {
-  const data = await Orderquestion.findAll();
+  const data = await Question.findAll();
   return res.json(data);
 });
 // .post(async (req, res) => {
