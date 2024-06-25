@@ -9,7 +9,6 @@ function setInitData(res, initData) {
 }
 
 const authMiddleware = (req, res, next) => {
-  console.log('authorization: ', req.header('authorization'));
   const [authType, authData = ''] = (req.header('authorization') || '').split(
     ' ',
   );

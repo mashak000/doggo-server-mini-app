@@ -20,7 +20,7 @@ module.exports = {
       health: {
         type: Sequelize.TEXT,
       },
-      charachter: {
+      character: {
         type: Sequelize.TEXT,
       },
       vaccinated: {

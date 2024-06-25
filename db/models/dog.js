@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       breed: DataTypes.STRING,
       age: DataTypes.INTEGER,
       health: DataTypes.TEXT,
-      charachter: DataTypes.TEXT,
+      character: DataTypes.TEXT,
       vaccinated: DataTypes.BOOLEAN,
       parasites: DataTypes.BOOLEAN,
       sterilized: DataTypes.BOOLEAN,

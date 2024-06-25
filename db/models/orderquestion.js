@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       placeholder: DataTypes.STRING,
       theme: DataTypes.STRING,
       name: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
     {
       sequelize,
