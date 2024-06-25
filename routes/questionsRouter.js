@@ -30,7 +30,10 @@ router
         return obj;
       }, {});
 
-      const newDog = await Dog.create(newDogProperties);
+      const newDog = await Dog.create({
+        ...newDogProperties,
+        userId: res.locals.initData.user.id,
+      });
       return res.status(200).json(newDog);
     } catch (error) {
       console.log(error);
