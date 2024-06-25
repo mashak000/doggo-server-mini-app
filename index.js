@@ -9,7 +9,6 @@ const dogsRouter = require('./routes/dogsRouter');
 const questionsRouter = require('./routes/questionsRouter');
 const sittersRouter = require('./routes/sittersRouter');
 const authMiddleware = require('./middleware/authMiddleware');
-// const showInitDataMiddleware = require('./middleware/showInitDataMiddleware');
 
 const app = express();
 
@@ -20,7 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(authMiddleware);
-// app.get('/', showInitDataMiddleware);
 app.use('/api/users', userRouter);
 app.use('/api/dogs', dogsRouter);
 app.use('/api/questions', questionsRouter);
