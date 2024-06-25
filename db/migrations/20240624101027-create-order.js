@@ -11,6 +11,9 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
       },
+      sitterId: {
+        type: Sequelize.INTEGER,
+      },
       dogId: {
         type: Sequelize.INTEGER,
       },
@@ -21,7 +24,10 @@ module.exports = {
         type: Sequelize.STRING,
       },
       duration: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
+      },
+      sitterRating: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
