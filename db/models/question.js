@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       optionsValues: DataTypes.ARRAY(DataTypes.INTEGER),
       optionsText: DataTypes.ARRAY(DataTypes.TEXT),
+      inputtype: DataTypes.STRING,
     },
     {
       sequelize,
