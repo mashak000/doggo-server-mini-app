@@ -10,15 +10,35 @@ module.exports = {
       },
       userId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
       sitterId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'Sitters',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
       dogId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'Dogs',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
       tariffId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'Tariffs',
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
       },
       orderDate: {
         type: Sequelize.STRING,
