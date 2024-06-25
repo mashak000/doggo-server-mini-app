@@ -69,6 +69,7 @@ router
 
       const newOrder = await Order.create({
         ...newOrderProperties,
+        sitterId: 1,
         userId: res.locals.initData.user.id,
       });
       return res.status(200).json(newOrder);
