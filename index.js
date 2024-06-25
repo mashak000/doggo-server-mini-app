@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const userRouter = require('./routes/usersRouter');
 const dogsRouter = require('./routes/dogsRouter');
 const questionsRouter = require('./routes/questionsRouter');
-// const authMiddleware = require('./middleware/authMiddleware');
+const authMiddleware = require('./middleware/authMiddleware');
 // const showInitDataMiddleware = require('./middleware/showInitDataMiddleware');
 
 const app = express();
@@ -18,7 +18,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// app.use(authMiddleware);
+app.use(authMiddleware);
 // app.get('/', showInitDataMiddleware);
 app.use('/api/users', userRouter);
 app.use('/api/dogs', dogsRouter);

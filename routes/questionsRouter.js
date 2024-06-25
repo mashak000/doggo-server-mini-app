@@ -15,15 +15,6 @@ router
       const { body: answers } = req;
       console.log('answers: ', answers);
 
-      // const name = answers.find((el) => el.questionId === 1).answer;
-      // const breed = answers.find((el) => el.questionId === 2).answer;
-      // const age = answers.find((el) => el.questionId === 3).answer;
-      // const health = answers.find((el) => el.questionId === 4).answer;
-      // const charachter = answers.find((el) => el.questionId === 5).answer;
-      // const vaccinated = answers.find((el) => el.questionId === 6).answer;
-      // const parasites = answers.find((el) => el.questionId === 7).answer;
-      // const sterilized = answers.find((el) => el.questionId === 8).answer;
-
       const newDogProperties = answers.reduce((obj, item) => {
         // eslint-disable-next-line no-param-reassign
         obj[item.name] = item.answer;
