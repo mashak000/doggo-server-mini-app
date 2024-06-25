@@ -29,6 +29,9 @@ module.exports = {
       optionsText: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
       },
+      inputtype: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

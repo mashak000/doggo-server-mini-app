@@ -79,6 +79,7 @@ module.exports = {
           theme: 'dog',
           name: 'age',
           type: 'input',
+          inputtype: 'number',
         },
         {
           question:
