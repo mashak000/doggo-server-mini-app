@@ -11,6 +11,7 @@ module.exports = {
             'Анна - ситтер с большим опытом. Анна предоставит полноценный уход, кормление и выгул вашего питомца',
           status: 'sitter',
           orderCounter: 5,
+          image: 'https://highlysensitiverefuge.com/wp-content/uploads/2022/10/why-highly-sensitive-people-have-a-special-connection-to-animals.jpg',
         },
 
         {
@@ -20,6 +21,7 @@ module.exports = {
             'Иван - опытный ситтер, который обеспечит заботу и внимание вашему питомцу',
           status: 'sitter',
           orderCounter: 10,
+          image: 'https://people.com/thmb/TqRgcEn65STk2WOu3f4ZWf5vBPU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(959x584:961x586)/dog-e10b5a9331054f2cafc93d2b6eec918a.jpg'
         },
 
         {
@@ -29,6 +31,7 @@ module.exports = {
             'Мария любит животных и с радостью присмотрит за вашим питомцем',
           status: 'sitter',
           orderCounter: 3,
+          image: 'https://t3.ftcdn.net/jpg/01/80/85/16/360_F_180851624_5jvAslMGfdGeunZD92tglYgnJEnvdxOY.jpg',
         },
 
         {
@@ -38,6 +41,7 @@ module.exports = {
             'Алексей - ответственный ситтер, который обеспечит безопасность и комфорт вашего питомца',
           status: 'sitter',
           orderCounter: 7,
+          image: 'https://media.istockphoto.com/id/1350689855/photo/portrait-of-an-asian-man-holding-a-young-dog.jpg?s=612x612&w=0&k=20&c=Iw0OedGHrDViIM_6MipHmPLlo83O59by-LGcsDPyzwU=',
         },
 
         {
