@@ -8,6 +8,7 @@ const userRouter = require('./routes/usersRouter');
 const dogsRouter = require('./routes/dogsRouter');
 const questionsRouter = require('./routes/questionsRouter');
 const sittersRouter = require('./routes/sittersRouter');
+const ordersRouter = require('./routes/ordersRouter');
 const authMiddleware = require('./middleware/authMiddleware');
 
 const app = express();
@@ -23,6 +24,7 @@ app.use('/api/users', userRouter);
 app.use('/api/dogs', dogsRouter);
 app.use('/api/questions', questionsRouter);
 app.use('/api/sitters', sittersRouter);
+app.use('/api/orders', ordersRouter);
 
 const { PORT } = process.env;
 

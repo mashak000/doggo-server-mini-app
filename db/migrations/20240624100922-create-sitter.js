@@ -23,6 +23,10 @@ module.exports = {
       orderCounter: {
         type: Sequelize.INTEGER,
       },
+      image: {
+        type: Sequelize.TEXT,
+        defaultValue: 'https://babysweetpeasboutique.com/cdn/shop/products/image_1024x1024_2x_406aa399-18b0-4f04-8bfa-4bb4035a6d06.png?v=1632414694',
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

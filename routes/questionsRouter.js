@@ -16,9 +16,9 @@ router
       console.log('answers: ', answers);
 
       const newDogProperties = answers.reduce((obj, item) => {
-        if (item.type === 'select') {
+        if (item.type === 'select' || item.inputtype === 'number') {
           // eslint-disable-next-line no-param-reassign
-          obj[item.name] = Number(item.answer);
+          obj[item.name] = Number(item.answer) || 0;
         } else if (item.type === 'boolean') {
           // eslint-disable-next-line no-param-reassign
           obj[item.name] = item.answer === 'true';

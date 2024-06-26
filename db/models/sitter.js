@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       about: DataTypes.TEXT,
       status: DataTypes.STRING,
       orderCounter: DataTypes.INTEGER,
+      image: DataTypes.TEXT,
     },
     {
       sequelize,
