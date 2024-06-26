@@ -11,7 +11,8 @@ const router = Router();
 router
   .route('/')
   .get(async (req, res) => {
-    const data = await Dog.findAll();
+    const { id } = res.locals.initData.user;
+    const data = await Dog.findAll({ where: { userId: id } });
     return res.json(data);
   })
   .post(async (req, res) => {
