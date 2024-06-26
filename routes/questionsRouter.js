@@ -35,7 +35,7 @@ router
 
       const newDog = await Dog.create({
         ...newDogProperties,
-        userId: res.locals.initData?.user?.id || 1,
+        userId: res.locals.initData?.user?.id,
       });
       return res.status(200).json(newDog);
     } catch (error) {
@@ -56,15 +56,18 @@ router
       console.log('answers: ', answers);
 
       const newOrderProperties = answers.reduce((obj, item) => {
-        if (item.type === 'select') {
+        if (
+          item.question.type === 'select' ||
+          item.question.inputtype === 'number'
+        ) {
           // eslint-disable-next-line no-param-reassign
-          obj[item.name] = Number(item.answer);
-        } else if (item.type === 'boolean') {
+          obj[item.question.name] = Number(item.answer) || -1;
+        } else if (item.question.type === 'boolean') {
           // eslint-disable-next-line no-param-reassign
-          obj[item.name] = item.answer === 'true';
+          obj[item.question.name] = item.answer === 'true';
         } else {
           // eslint-disable-next-line no-param-reassign
-          obj[item.name] = item.answer;
+          obj[item.question.name] = item.answer;
         }
 
         return obj;
@@ -73,7 +76,7 @@ router
       const newOrder = await Order.create({
         ...newOrderProperties,
         sitterId: 1,
-        userId: res.locals.initData?.user?.id || 1,
+        userId: res.locals.initData?.user?.id,
       });
       return res.status(200).json(newOrder);
     } catch (error) {
