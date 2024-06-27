@@ -17,6 +17,7 @@ router
 
       const newDogProperties = answers.reduce((obj, item) => {
         if (
+          // eslint-disable-next-line operator-linebreak
           item.question.type === 'select' ||
           item.question.inputtype === 'number'
         ) {
@@ -57,6 +58,7 @@ router
 
       const newOrderProperties = answers.reduce((obj, item) => {
         if (
+          // eslint-disable-next-line operator-linebreak
           item.question.type === 'select' ||
           item.question.inputtype === 'number'
         ) {
