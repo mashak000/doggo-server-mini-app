@@ -7,7 +7,6 @@ bot.start((ctx) => {
   ctx.reply(
     `Welcome to Doggo, ${ctx.from.first_name}!`,
     Markup.inlineKeyboard([
-      [Markup.button.webApp('🐶', 'https://doggo-test-teal.vercel.app/')],
       [Markup.button.callback('Contact', 'contact_command')],
     ]),
   );
