@@ -31,7 +31,7 @@ const { PORT } = process.env;
 
 app.listen(PORT, () => console.log(` Server started on port ${PORT}`));
 
-bot.launch();
+// bot.launch();
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));

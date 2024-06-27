@@ -39,11 +39,14 @@ module.exports = {
         },
         onDelete: 'CASCADE',
       },
-      orderDate: {
+      startTime: {
         type: Sequelize.STRING,
       },
-      duration: {
-        type: Sequelize.INTEGER,
+      endTime: {
+        type: Sequelize.STRING,
+      },
+      date: {
+        type: Sequelize.STRING,
       },
       sitterRating: {
         type: Sequelize.INTEGER,

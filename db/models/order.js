@@ -2,13 +2,12 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Order extends Model {
-    static associate({ User, Dog, Tariff, SitterRating, Duration, Sitter }) {
+    static associate({ User, Dog, Tariff, SitterRating, Sitter }) {
       this.belongsTo(User, { foreignKey: 'userId' });
       this.belongsTo(Dog, { foreignKey: 'dogId' });
       this.belongsTo(Sitter, { foreignKey: 'sitterId' });
       this.belongsTo(Tariff, { foreignKey: 'tariffId' });
       this.belongsTo(SitterRating, { foreignKey: 'sitterRating' });
-      this.belongsTo(Duration, { foreignKey: 'duration' });
     }
   }
   Order.init(
@@ -17,8 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       sitterId: DataTypes.INTEGER,
       dogId: DataTypes.INTEGER,
       tariffId: DataTypes.INTEGER,
-      orderDate: DataTypes.STRING,
-      duration: DataTypes.INTEGER,
+      startTime: DataTypes.STRING,
+      endTime: DataTypes.STRING,
+      date: DataTypes.STRING,
       sitterRating: DataTypes.INTEGER,
     },
     {

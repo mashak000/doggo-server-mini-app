@@ -57,7 +57,18 @@ router
       console.log('answers: ', answers);
 
       const newOrderProperties = answers.reduce((obj, item) => {
-        if (
+        if (item.question.name === 'orderDate') {
+          obj.startTime = new Date(item.answer.startTime).toLocaleTimeString(
+            'en-US',
+            { hour: '2-digit', minute: '2-digit', hour12: false },
+          );
+          obj.endTime = new Date(item.answer.endTime).toLocaleTimeString(
+            'en-US',
+            { hour: '2-digit', minute: '2-digit', hour12: false },
+          );
+          // eslint-disable-next-line prefer-destructuring
+          obj.date = new Date(item.answer.date).toISOString().split('T')[0];
+        } else if (
           // eslint-disable-next-line operator-linebreak
           item.question.type === 'select' ||
           item.question.inputtype === 'number'
