@@ -16,6 +16,4 @@ bot.action('contact_command', (ctx) => {
   ctx.reply('Contact us via email at doggotbilisi@gmail.com 🐶📨');
 });
 
-bot.launch();
-
 module.exports = bot;
