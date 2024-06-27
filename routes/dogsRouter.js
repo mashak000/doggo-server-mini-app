@@ -1,10 +1,8 @@
 /* eslint-disable camelcase */
 const { Router } = require('express');
 const fs = require('fs');
-const multer = require('multer');
 const { Dog } = require('../db/models');
-// const uploadPhoto = require('../middleware/uploadPhoto');
-const upload = multer({ dest: 'uploads/' });
+const uploadPhoto = require('../middleware/uploadPhoto');
 
 const router = Router();
 
@@ -15,12 +13,8 @@ router.route('/').get(async (req, res) => {
 });
 
 router.route('/uploadImage').post(
-  // uploadPhoto.array('data', 10),
-  upload.single('photo'),
+  uploadPhoto.array('photos'),
   async (req, res) => {
-    console.log(req.body);
-    console.log(req.file);
-    console.log(req.files);
     try {
       const uploadedFiles = [];
       for (let i = 0; i < req.files.length; i += 1) {
