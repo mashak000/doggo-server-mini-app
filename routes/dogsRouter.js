@@ -3,10 +3,11 @@ const { Router } = require('express');
 const fs = require('fs');
 const { Dog } = require('../db/models');
 const uploadPhoto = require('../middleware/uploadPhoto');
+const authMiddleware = require('../middleware/authMiddleware');
 
 const router = Router();
 
-router.route('/').get(async (req, res) => {
+router.route('/').get(authMiddleware, async (req, res) => {
   const { id } = res.locals.initData.user;
   const data = await Dog.findAll({ where: { userId: id } });
   return res.json(data);
@@ -15,8 +16,6 @@ router.route('/').get(async (req, res) => {
 router
   .route('/uploadImage')
   .post(uploadPhoto.single('photos'), async (req, res) => {
-    console.log('post to /uploadImage');
-    console.log('file: ', req.file);
     try {
       const { path: oldPath, originalname } = req.file;
       const parts = originalname.split('.');

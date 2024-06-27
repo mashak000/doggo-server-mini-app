@@ -1,16 +1,17 @@
 /* eslint-disable camelcase */
 const { Router } = require('express');
 const { Question, Dog, Order } = require('../db/models');
+const authMiddleware = require('../middleware/authMiddleware');
 
 const router = Router();
 
 router
   .route('/dog')
-  .get(async (req, res) => {
+  .get(authMiddleware, async (req, res) => {
     const data = await Question.findAll({ where: { theme: 'dog' } });
     return res.json(data);
   })
-  .post(async (req, res) => {
+  .post(authMiddleware, async (req, res) => {
     try {
       const { body: answers } = req;
       console.log('answers: ', answers);
@@ -47,11 +48,11 @@ router
 
 router
   .route('/order')
-  .get(async (req, res) => {
+  .get(authMiddleware, async (req, res) => {
     const data = await Question.findAll({ where: { theme: 'order' } });
     return res.json(data);
   })
-  .post(async (req, res) => {
+  .post(authMiddleware, async (req, res) => {
     try {
       const { body: answers } = req;
       console.log('answers: ', answers);
