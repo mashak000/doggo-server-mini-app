@@ -1,31 +1,21 @@
 const { Telegraf, Markup } = require('telegraf');
 require('dotenv').config();
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const bot = new Telegraf(process.env.TOKEN);
 
-bot.start((ctx) =>
+bot.start((ctx) => {
   ctx.reply(
     `Welcome to Doggo, ${ctx.from.first_name}!`,
     Markup.inlineKeyboard([
-      // TODO: тут отобразить что у нас за команды есть
-      Markup.button.webApp('🐶', 'https://doggo-test-teal.vercel.app/'),
+      [Markup.button.callback('Contact', 'contact_command')],
     ]),
-  ),
-);
-
-bot.command('contact', (ctx) => {
-  ctx.reply('Contact us via email at doggotbilisi@gmail.com 🐶');
+  );
 });
 
-bot.command('feedback', (ctx) => {
-  ctx.reply("We'd love to hear your feedback! Please type your message below.");
+bot.action('contact_command', (ctx) => {
+  ctx.reply('Contact us via email at doggotbilisi@gmail.com 🐶📨');
 });
 
-bot.on('text', (ctx) => {
-  if (ctx.message.text.toLowerCase() !== '/feedback') {
-    // Handle feedback here, e.g., save to a database or send an email
-    ctx.reply('Thank you for your feedback!');
-  }
-});
+bot.launch();
 
 module.exports = bot;
