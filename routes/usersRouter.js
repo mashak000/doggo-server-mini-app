@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 const { Router } = require('express');
 const { User } = require('../db/models');
+const authMiddleware = require('../middleware/authMiddleware');
 
 const router = Router();
 
@@ -9,7 +10,7 @@ router.get('/', async (req, res) => {
   return res.json(data);
 });
 
-router.route('/signup').post(async (req, res) => {
+router.route('/signup').post(authMiddleware, async (req, res) => {
   try {
     const { user } = res.locals.initData;
     console.log('user: ', user);
@@ -29,7 +30,7 @@ router.route('/signup').post(async (req, res) => {
   }
 });
 
-router.route('/login').post(async (req, res) => {
+router.route('/login').post(authMiddleware, async (req, res) => {
   try {
     const { user } = res.locals.initData;
     console.log('user: ', user);
