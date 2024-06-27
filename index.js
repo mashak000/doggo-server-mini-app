@@ -20,7 +20,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// app.use(authMiddleware);
+app.use(authMiddleware);
 app.use('/api/users', userRouter);
 app.use('/api/dogs', dogsRouter);
 app.use('/api/questions', questionsRouter);
@@ -31,7 +31,7 @@ const { PORT } = process.env;
 
 app.listen(PORT, () => console.log(` Server started on port ${PORT}`));
 
-// bot.launch();
+bot.launch();
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
