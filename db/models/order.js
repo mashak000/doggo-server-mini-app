@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       endTime: DataTypes.STRING,
       date: DataTypes.STRING,
       sitterRating: DataTypes.INTEGER,
+      isActive: DataTypes.BOOLEAN,
     },
     {
       sequelize,
