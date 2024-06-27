@@ -10,6 +10,7 @@ const questionsRouter = require('./routes/questionsRouter');
 const sittersRouter = require('./routes/sittersRouter');
 const ordersRouter = require('./routes/ordersRouter');
 const authMiddleware = require('./middleware/authMiddleware');
+const bot = require('./bot');
 
 const app = express();
 
@@ -29,3 +30,8 @@ app.use('/api/orders', ordersRouter);
 const { PORT } = process.env;
 
 app.listen(PORT, () => console.log(` Server started on port ${PORT}`));
+
+bot.launch();
+
+process.once('SIGINT', () => bot.stop('SIGINT'));
+process.once('SIGTERM', () => bot.stop('SIGTERM'));
