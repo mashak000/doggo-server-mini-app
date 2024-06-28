@@ -11,7 +11,7 @@ module.exports = {
           status: 'senior sitter',
           orderCounter: 28,
           image:
-            'https://drive.google.com/file/d/1aq69FYu5BV5uLxxsyiVzhSn2o7UIJiq4/view?usp=drive_link',
+            'https://i.pinimg.com/736x/17/80/23/178023547bbea362a0f44b4707fa967c.jpg',
         },
 
         {
@@ -22,7 +22,7 @@ module.exports = {
           status: 'handler',
           orderCounter: 36,
           image:
-            'https://drive.google.com/file/d/1Tx92e2nebvYumLsY9aC72wFTdM6iQYRS/view?usp=drive_link',
+            'https://i.pinimg.com/736x/b6/21/cd/b621cdbb2cda110012937eb9f09ea1f4.jpg',
         },
 
         {
@@ -33,7 +33,7 @@ module.exports = {
           status: 'sitter',
           orderCounter: 12,
           image:
-            'https://drive.google.com/file/d/1Gh-sH6zUKiu5s434VJHMQddWsBz4PxbW/view?usp=drive_link',
+            'https://i.pinimg.com/736x/b6/1c/c2/b61cc2630fb838ee89157d09ab831e88.jpg',
         },
 
         {
@@ -44,7 +44,7 @@ module.exports = {
           status: 'sitter',
           orderCounter: 7,
           image:
-            'https://drive.google.com/file/d/1TntTM61dPZXL9FqCnJgqj_FkDr3mh_zm/view?usp=drive_link',
+            'https://i.pinimg.com/736x/82/6a/ed/826aedec38a5c5dd0e6cf1adc48bb1b7.jpg',
         },
 
         {
@@ -55,7 +55,7 @@ module.exports = {
           status: 'sitter',
           orderCounter: 2,
           image:
-            'https://drive.google.com/file/d/1FiVRjX7_WRU4AXBiIiWhF6bZngCMgAEj/view?usp=drive_link',
+            'https://i.pinimg.com/736x/68/99/3a/68993ace1bc4035e8002abfb36e88254.jpg',
         },
 
         // {
